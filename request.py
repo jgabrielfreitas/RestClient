@@ -12,8 +12,8 @@ class request:
         print('### GET METHOD ###')
         print('end_point -> ' + self.end_point)
         print('service -> ' + service)
-        print('##################')
-        print('##################')
+        print('##############################')
+        print('##############################')
 
         headers = {
                 'authorization': "D8199B61-CD5C-4837-8616-9A43B8103E5D"
@@ -26,6 +26,7 @@ class request:
 
         conn.request("GET", service, '', headers=headers)
         res = conn.getresponse()
+        print('STATUS: {0} {1}'.format(res.status, res.reason))
         data = res.read()
 
         return data.decode("utf-8")
